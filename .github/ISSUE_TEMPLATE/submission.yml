@@ -1,0 +1,39 @@
+name: Skill submission
+description: Publish a skill to the Anchor Marketplace
+title: "[skill] "
+labels: ["submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Attach the `listing.json` and `<slug>.zip` that Anchor wrote to
+        `~/.anchor/market/submissions/<slug>/`. A maintainer will review and
+        add the listing to `index.json`.
+  - type: input
+    id: name
+    attributes:
+      label: Skill name
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: What does it do and when should the agent use it?
+    validations:
+      required: true
+  - type: input
+    id: license
+    attributes:
+      label: License
+      value: MIT
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist
+      options:
+        - label: The skill contains no secrets, tokens or personal data.
+          required: true
+        - label: SKILL.md has `name` and `description` frontmatter.
+          required: true
+        - label: I am the author or have the right to publish it.
+          required: true

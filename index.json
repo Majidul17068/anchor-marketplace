@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "repo": "Majidul17068/anchor-marketplace",
+  "featured": ["majidul/pr-reviewer"],
+  "listings": [
+    {
+      "id": "majidul/pr-reviewer",
+      "name": "PR Reviewer",
+      "tagline": "Structured pull-request reviews with risk notes",
+      "description": "Reviews a diff or branch for correctness, security and style. Produces a short summary, a ranked list of findings with file and line references, and a merge recommendation. Works on any repository the Antigravity CLI can read.",
+      "version": "1.0.0",
+      "author": { "id": "majidulislam17068@gmail.com", "name": "Majidul Islam" },
+      "categories": ["Coding", "DevOps"],
+      "installs": 0,
+      "rating": 0,
+      "ratingCount": 0,
+      "trained": false,
+      "visibility": "public",
+      "license": "MIT",
+      "files": [
+        {
+          "path": "SKILL.md",
+          "content": "---\nname: pr-reviewer\ndescription: >-\n  Use this skill when the user asks to review a pull request, a diff, a branch,\n  or staged changes. Produces a structured review with ranked findings and a\n  merge recommendation.\n---\n\n# PR Reviewer\n\nReview code changes the way a careful senior engineer would.\n\n## Steps\n\n1. Identify the change set. Prefer, in order: a PR number the user gave\n   (`gh pr diff <n>`), a branch (`git diff main...<branch>`), staged changes\n   (`git diff --cached`), or the working tree (`git diff`).\n2. Read every changed file in full, not only the hunks, so you understand\n   the surrounding logic.\n3. Check, in this order: correctness (logic, edge cases, error handling),\n   security (injection, secrets, auth, unsafe deserialisation), concurrency,\n   performance on hot paths, tests (missing or weakened), and style only\n   where it hides a bug.\n4. Run the project's test command if one is obvious from the repo and the\n   change is small enough to test quickly.\n\n## Output format\n\n```\n## Summary\nOne paragraph: what the change does and whether it is safe to merge.\n\n## Findings (highest severity first)\n1. [BLOCKER|MAJOR|MINOR] path/file.ext:line — what is wrong, why it matters, how to fix.\n\n## Recommendation\nMerge | Merge after fixes | Do not merge — one sentence why.\n```\n\n## Rules\n\n- Every finding cites a file and line. No finding without a concrete fix.\n- Do not restate the diff. Do not praise. Keep the summary under 120 words.\n- If the change set is empty or cannot be determined, say so and stop.\n"
+        }
+      ],
+      "examples": [
+        {
+          "id": "ex-1",
+          "prompt": "Review the staged changes in this repo.",
+          "expected": "A review with a Summary, a severity-ranked Findings list citing file and line, and a one-line Recommendation."
+        }
+      ],
+      "changelog": [{ "version": "1.0.0", "at": "2026-11-11T00:00:00Z", "notes": "Initial listing" }],
+      "publishedAt": "2026-11-11T00:00:00Z",
+      "updatedAt": "2026-11-11T00:00:00Z"
+    }
+  ],
+  "requests": [],
+  "reviews": {}
+}

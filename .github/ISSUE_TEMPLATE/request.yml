@@ -1,0 +1,20 @@
+name: Skill request
+description: Ask the community (or a specific author) for a skill
+title: "[request] "
+labels: ["request"]
+body:
+  - type: textarea
+    id: need
+    attributes:
+      label: What should the skill do?
+      description: Describe the task, the tools involved, and what a good result looks like.
+    validations:
+      required: true
+  - type: input
+    id: author
+    attributes:
+      label: Requested from (optional author email or handle)
+  - type: input
+    id: bounty
+    attributes:
+      label: Bounty (optional, free text)

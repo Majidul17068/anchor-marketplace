@@ -1,0 +1,24 @@
+name: Skill review
+description: Rate and review a marketplace skill
+title: "[review] "
+labels: ["review"]
+body:
+  - type: input
+    id: listing
+    attributes:
+      label: Listing id (for example majidul/pr-reviewer)
+    validations:
+      required: true
+  - type: dropdown
+    id: rating
+    attributes:
+      label: Rating
+      options: ["5", "4", "3", "2", "1"]
+    validations:
+      required: true
+  - type: textarea
+    id: text
+    attributes:
+      label: Review
+    validations:
+      required: true
